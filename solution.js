@@ -46,13 +46,30 @@ employee.name = 'name2';
 console.log(employee);
 
 // Bonus: 6. Is the average a whole number?
-
 // Create a function that takes 4 integers as parameters and returns true or false depending on whether the average of all the arguments is a whole number or not.
-
 //     Examples
-
 //     isWhole(1, 2, 3, 4) ➞ false
-
+// 10/4 = 2.5
 //     isWhole(9, 2, 2, 5) ➞ false
-
 //     Once you have created a function, pass in an array as an argument which contains four elements - check if this method still outputs the correct result!
+// NO!
+
+function isWhole(int1, int2, int3, int4) {
+    avg = (int1 + int2 + int3 + int4) / 4;
+    console.log(avg);
+    return Math.round(avg) === avg;
+}
+
+console.log(isWhole(1, 2, 3, 4), isWhole(9, 2, 2, 5))
+
+
+function isWhole2(...integers) {
+    avg = 0;
+    for (int of integers) {
+        avg += int;
+    }
+    avg = avg / integers.length;
+    console.log(avg);
+    return Math.round(avg) === avg;
+}
+console.log(isWhole2(1, 2, 3, 4), isWhole2(9, 2, 2, 5))
